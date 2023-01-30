@@ -1,35 +1,36 @@
+
+
+
 const incentives = [
     {
-      name: 'Free shipping',
-      imageSrc: 'https://tailwindui.com/img/ecommerce/icons/icon-shipping-simple.svg',
-      description: "It's not actually free we just price it into the products. Someone's paying for it, and it's not us.",
+      name: 'Rapida ejecucion',
+      imageSrc: 'https://bafybeia6c3g2ubhppj2gbfnac3ufxsfk6lpmpkrqqfuvcd5xgilcds2sba.ipfs.w3s.link/ipfs/bafybeia6c3g2ubhppj2gbfnac3ufxsfk6lpmpkrqqfuvcd5xgilcds2sba/RocketLaunch.svg',
+      description: "Sabemos lo importante que es sacar un negocio adelante, por lo que no andamos con vueltas para terminar lo que nos pidas",
     },
     {
-      name: '10-year warranty',
-      imageSrc: 'https://tailwindui.com/img/ecommerce/icons/icon-warranty-simple.svg',
-      description: "If it breaks in the first 10 years we'll replace it. After that you're on your own though.",
+      name: 'Presupuestos a la medida',
+      imageSrc: 'https://bafybeib3o3zv26njoxdi7ixvlllqkd4rocgtjcqggksrjwmtl3w3p4f7ti.ipfs.w3s.link/ipfs/bafybeib3o3zv26njoxdi7ixvlllqkd4rocgtjcqggksrjwmtl3w3p4f7ti/CreditCard.svg',
+      description: "Construimos nuestros servicios en base a tus posibilidades",
     },
     {
-      name: 'Exchanges',
-      imageSrc: 'https://tailwindui.com/img/ecommerce/icons/icon-exchange-simple.svg',
+      name: 'Excelencia de atencion',
+      imageSrc: 'https://bafybeiglq4ss3cw4ua7dn46bgg6arw5xs2v5o4epmygw6whwq73ub6qxzm.ipfs.w3s.link/ipfs/bafybeiglq4ss3cw4ua7dn46bgg6arw5xs2v5o4epmygw6whwq73ub6qxzm/UserGroup.svg',
       description:
-        "If you don't like it, trade it to one of your friends for something of theirs. Don't send it here though.",
+        "Nuestro equipo de profesionales está comprometido a brindar un servicio excepcional y estar disponibles para responder cualquier pregunta o inquietud que puedan tener nuestros clientes en cualquier momento.",
     },
   ]
   
   export default function Incentives() {
     return (
       <div className="bg-white">
-        <div className="mx-auto lg:mx-12 max-w-full py-24 sm:px-2 sm:py-32 lg:px-4">
+        <div className="ml-10 mx-auto  py-24  sm:py-32">
           <div className="mx-auto max-w-2xl px-4 lg:max-w-none">
             <div className="max-w-3xl">
               <h2 className="text-4xl font-bold tracking-tight text-gray-900">
-                We built our business on customer service
+                Construimos nuestro negocio atendiendo sus necesidades
               </h2>
               <p className="mt-4 text-gray-500">
-                At the beginning at least, but then we realized we could make a lot more money if we kinda stopped caring
-                about that. Our new strategy is to write a bunch of things that look really good in the headlines, then
-                clarify in the small print but hope people don't actually read it.
+              Nos esforzamos por entender las necesidades de nuestros clientes y trabajamos incansablemente para cumplir sus deseos y ayudarlos a alcanzar sus metas. Nos enorgullecemos de ofrecer un servicio personalizado y de alta calidad para cada uno de nuestros clientes. ¡Confía en nosotros para ayudarte a alcanzar tus objetivos y haz crecer tu negocio con nosotros!
               </p>
             </div>
             <div className="mt-16 grid grid-cols-1 gap-y-10 gap-x-8 lg:grid-cols-3">

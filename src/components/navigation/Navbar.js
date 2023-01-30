@@ -1,19 +1,10 @@
 import {connect} from 'react-redux'
 import { Popover, Transition } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
-import {useState, Fragment, useEffect } from 'react'
+import {useState, Fragment } from 'react'
 import {NavLink,Link} from 'react-router-dom'
-import loading_dots from 'assets/img/loading-dots.gif'
-import logo_boomslag from 'assets/img/boomslag-black.png'
 import DotLoader from 'react-spinners/DotLoader'
 
 const solutions = [
-    {
-      name: 'Casos',
-      description: 'Measure actions your users take',
-      href: '/casos',
-      icon: IconOne,
-    },
     {
       name: 'Servicios',
       description: 'Create your own targeted content',
@@ -68,39 +59,48 @@ function Navbar(){
 
     return(
         <nav data-scroll data-scroll-id="hey" id='navbar' className='w-full py-6 top-0 transition duration-500 ease-in-out z-40 fixed'>
-            <div className="px-2 xl:px-4">
-                <div className="-ml-4 -mt-2 hidden lg:flex flex-wrap items-center justify-between sm:flex-nowrap md:px-4 px-2">
+            
+            <div className="mx-auto max-w-1700 px-4 sm:px-6 lg:px-8">
+            {/* We've used 3xl here, but feel free to try other max-widths based on your needs */}
+              <div className="mx-auto max-w-1700">
+                {/* Desktop Navbar */}
+                <div className="-ml-4 -mt-2  hidden lg:flex flex-wrap items-center justify-between sm:flex-nowrap md:px-4 px-2">
                     <Link to='/' className="ml-4 mt-2">
                     <img
-                        src={'https://bafybeiczl4dcxupma2zeyilkukfl4yge64axnhajd722wxgin62mtts6uy.ipfs.w3s.link/murkivamarketing.png'}
+                        src={'https://bafybeidwiptjily2bt4yvxhqkdhdv66y4vxyvzk7ulbsan4mpdgxeit7zm.ipfs.w3s.link/ipfs/bafybeidwiptjily2bt4yvxhqkdhdv66y4vxyvzk7ulbsan4mpdgxeit7zm/generated.svg'}
+                        alt=""
                         width={160}
                         height={160}
                         className=""
                     />
                     </Link>
                     <div className="ml-4 mt-2 flex-shrink-0">
-                    <NavLink to='/casos' className="text-lg inline-flex font-semibold leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-300 ease-in-out mx-4">Casos</NavLink>
-                    <NavLink to='/servicios' className="text-lg inline-flex font-semibold leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-300 ease-in-out mx-4">Servicios</NavLink>
-                    <NavLink to='/nosotros' className="text-lg inline-flex font-semibold leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-300 ease-in-out mx-4">Nosotros</NavLink>
-                    <NavLink to='/carreras' className="text-lg inline-flex font-semibold leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-300 ease-in-out mx-4">Carreras</NavLink>
-                    <NavLink to='/blog' className="text-lg inline-flex font-semibold leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-300 ease-in-out mx-4">Blog</NavLink>
-                    <NavLink to='/contacto' className="text-lg inline-flex font-semibold leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-300 ease-in-out mx-4">Contacto</NavLink>
+                    <NavLink to='/servicios' className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-500 ease-in-out mx-5">Servicios</NavLink>
+                    <NavLink to='/nosotros' className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-500 ease-in-out mx-5">Nosotros</NavLink>
+                    <NavLink to='/carreras' className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-500 ease-in-out mx-5">Carreras</NavLink>
+                    <NavLink to='/blog' className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-500 ease-in-out mx-5">Blog</NavLink>
+                    <NavLink to='/contacto' className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-transparent hover:border-orange-500 transition duration-500 ease-in-out mx-5">Contacto</NavLink>
                     
                     <Link
                         to="/contacto"
-                        className="inline-flex ml-12 items-center rounded-md border border-transparent bg-orange-button px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-gray-900 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+                        className="inline-flex ml-10 items-center rounded-md border border-transparent bg-orange-button px-6 py-2.5 text-lg font-medium text-white shadow-sm hover:bg-gray-900 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
                     >
-                        Hire Us
+                        Contratanos
+                        <span className='px-2'>
+
                         <DotLoader className="ml-3 -mr-1 h-5 w-5" loading={loading} size={20} color="#f2f2f2" />
+                        </span>
                     </Link>
                     </div>
                 </div>
+                {/* Mobile Navbar */}
                 <div className="-ml-4 -mt-2 lg:hidden flex flex-wrap items-center justify-between sm:flex-nowrap md:px-4 px-2">
                     <Link to='/' className="ml-4 mt-3">
                     <img
                         src={'https://bafybeiczl4dcxupma2zeyilkukfl4yge64axnhajd722wxgin62mtts6uy.ipfs.w3s.link/murkivamarketing.png'}
                         width={160}
                         height={160}
+                        alt=""
                         className=""
                     />
                     </Link>
@@ -176,6 +176,7 @@ function Navbar(){
                       </Popover>
                     </div>
                 </div>
+              </div>
             </div>
         </nav>
     )

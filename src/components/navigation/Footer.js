@@ -97,9 +97,10 @@ function Footer(){
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
             <div className="space-y-8 xl:col-span-1">
             <img
-                src={'https://bafybeie3dkjdydulam4igwx2hwaepkkyugze2z7bpohekdi2maqrgaaegq.ipfs.w3s.link/idealogo.png'}
-                width={60}
-                height={60}
+                src={'https://bafybeidwiptjily2bt4yvxhqkdhdv66y4vxyvzk7ulbsan4mpdgxeit7zm.ipfs.w3s.link/ipfs/bafybeidwiptjily2bt4yvxhqkdhdv66y4vxyvzk7ulbsan4mpdgxeit7zm/generated.svg'}
+                alt=""
+                width={150}
+                height={150}
                 className=""/>
               <div className="flex space-x-6">
                 {navigation.social.map((item) => (

@@ -2,6 +2,10 @@ from django.db import models
 from django.utils import timezone
 from ckeditor.fields import RichTextField
 from apps.category.models import Category
+from django.conf import settings
+import uuid
+
+User = settings.AUTH_USER_MODEL
 
 def blog_thumbnail_directory(instance, filename):
     return 'blog/{0}/{1}'.format(instance.title, filename)
@@ -18,21 +22,22 @@ class Post(models.Model):
         ('published', 'Published'),
     )
 
-    title =         models.CharField(max_length=255)
-    slug =          models.SlugField(max_length=255, unique=True)
-    thumbnail =     models.ImageField(upload_to=blog_thumbnail_directory, max_length=500)
+    title =         models.CharField(max_length=255, blank=True, null=True)
+    slug =          models.SlugField(max_length=255, unique=True, default=uuid.uuid4)
+    author=         models.ForeignKey(User, on_delete=models.CASCADE)
+    thumbnail =     models.ImageField(upload_to=blog_thumbnail_directory, max_length=500, blank=True, null=True)
     
-    description =   models.TextField(max_length=255)
-    content =       RichTextField()
+    description =   models.TextField(max_length=255, blank=True, null=True)
+    content =       RichTextField(blank=True, null=True)
 
-    time_read =     models.IntegerField()
+    time_read =     models.IntegerField(blank=True, null=True)
 
     published =     models.DateTimeField(default=timezone.now)
     views =         models.IntegerField(default=0, blank=True)
 
     status =        models.CharField(max_length=10, choices=options, default='draft')
 
-    category =      models.ForeignKey(Category, on_delete=models.PROTECT)
+    category =      models.ForeignKey(Category, on_delete=models.PROTECT, blank=True, null=True)
 
     objects =           models.Manager()  # default manager
     postobjects =       PostObjects()  # custom manager
@@ -46,6 +51,10 @@ class Post(models.Model):
     def get_view_count(self):
         views = ViewCount.objects.filter(post=self).count()
         return views
+
+    def get_status(self):
+        status = self.status
+        return status
 
 
 

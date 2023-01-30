@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom'
 import Error404 from 'containers/errors/Error404';
 import Home from 'containers/pages/Home';
-import Cases from 'containers/pages/Cases';
 
 import Services from 'containers/pages/Services';
 import About from 'containers/pages/About';
@@ -26,7 +25,6 @@ function AnimatedRoutes(){
 
                     {/* Home Display */}
                     <Route path="/" element={<Home />} />
-                    <Route path="/casos" element={<Cases />} />
                     <Route path="/servicios" element={<Services />} />
                     <Route path="/nosotros" element={<About />} />
                     <Route path="/carreras" element={<Careers />} />
